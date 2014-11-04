@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C59F11841A08BD5D00CA749F /* DiscoverNetwork.c in Sources */ = {isa = PBXBuildFile; fileRef = C59F116E1A08BD5D00CA749F /* DiscoverNetwork.c */; };
+		C59F11851A08BD5D00CA749F /* libJIPclient.c in Sources */ = {isa = PBXBuildFile; fileRef = C59F116F1A08BD5D00CA749F /* libJIPclient.c */; };
+		C59F11861A08BD5D00CA749F /* Cache.c in Sources */ = {isa = PBXBuildFile; fileRef = C59F11711A08BD5D00CA749F /* Cache.c */; };
+		C59F11871A08BD5D00CA749F /* libJIP.c in Sources */ = {isa = PBXBuildFile; fileRef = C59F11751A08BD5D00CA749F /* libJIP.c */; };
+		C59F11881A08BD5D00CA749F /* Network.c in Sources */ = {isa = PBXBuildFile; fileRef = C59F11761A08BD5D00CA749F /* Network.c */; };
+		C59F11891A08BD5D00CA749F /* Node.c in Sources */ = {isa = PBXBuildFile; fileRef = C59F11781A08BD5D00CA749F /* Node.c */; };
+		C59F118A1A08BD5D00CA749F /* Persist.c in Sources */ = {isa = PBXBuildFile; fileRef = C59F11791A08BD5D00CA749F /* Persist.c */; };
+		C59F118B1A08BD5D00CA749F /* Tables.c in Sources */ = {isa = PBXBuildFile; fileRef = C59F117A1A08BD5D00CA749F /* Tables.c */; };
+		C59F118C1A08BD5D00CA749F /* Threads.c in Sources */ = {isa = PBXBuildFile; fileRef = C59F117B1A08BD5D00CA749F /* Threads.c */; };
+		C59F118D1A08BD5D00CA749F /* Doxyfile in Resources */ = {isa = PBXBuildFile; fileRef = C59F117F1A08BD5D00CA749F /* Doxyfile */; };
+		C59F118E1A08BD5D00CA749F /* Groups.c in Sources */ = {isa = PBXBuildFile; fileRef = C59F11821A08BD5D00CA749F /* Groups.c */; };
+		C59F118F1A08BD5D00CA749F /* libJIPserver.c in Sources */ = {isa = PBXBuildFile; fileRef = C59F11831A08BD5D00CA749F /* libJIPserver.c */; };
+		C59F11911A08C07D00CA749F /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C59F11901A08C07D00CA749F /* libxml2.dylib */; };
 		C5BDC6E11A07551800E32F7E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BDC6E01A07551800E32F7E /* main.m */; };
 		C5BDC6E41A07551800E32F7E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BDC6E31A07551800E32F7E /* AppDelegate.m */; };
 		C5BDC6E71A07551800E32F7E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BDC6E61A07551800E32F7E /* ViewController.m */; };
@@ -27,6 +40,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C59F116E1A08BD5D00CA749F /* DiscoverNetwork.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = DiscoverNetwork.c; sourceTree = "<group>"; };
+		C59F116F1A08BD5D00CA749F /* libJIPclient.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = libJIPclient.c; sourceTree = "<group>"; };
+		C59F11711A08BD5D00CA749F /* Cache.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Cache.c; sourceTree = "<group>"; };
+		C59F11721A08BD5D00CA749F /* Cache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cache.h; sourceTree = "<group>"; };
+		C59F11731A08BD5D00CA749F /* JIP_Packets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JIP_Packets.h; sourceTree = "<group>"; };
+		C59F11741A08BD5D00CA749F /* JIP_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JIP_Private.h; sourceTree = "<group>"; };
+		C59F11751A08BD5D00CA749F /* libJIP.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = libJIP.c; sourceTree = "<group>"; };
+		C59F11761A08BD5D00CA749F /* Network.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Network.c; sourceTree = "<group>"; };
+		C59F11771A08BD5D00CA749F /* Network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Network.h; sourceTree = "<group>"; };
+		C59F11781A08BD5D00CA749F /* Node.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Node.c; sourceTree = "<group>"; };
+		C59F11791A08BD5D00CA749F /* Persist.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Persist.c; sourceTree = "<group>"; };
+		C59F117A1A08BD5D00CA749F /* Tables.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Tables.c; sourceTree = "<group>"; };
+		C59F117B1A08BD5D00CA749F /* Threads.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Threads.c; sourceTree = "<group>"; };
+		C59F117C1A08BD5D00CA749F /* Threads.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Threads.h; sourceTree = "<group>"; };
+		C59F117D1A08BD5D00CA749F /* Trace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trace.h; sourceTree = "<group>"; };
+		C59F117F1A08BD5D00CA749F /* Doxyfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Doxyfile; sourceTree = "<group>"; };
+		C59F11801A08BD5D00CA749F /* JIP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JIP.h; sourceTree = "<group>"; };
+		C59F11821A08BD5D00CA749F /* Groups.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Groups.c; sourceTree = "<group>"; };
+		C59F11831A08BD5D00CA749F /* libJIPserver.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = libJIPserver.c; sourceTree = "<group>"; };
+		C59F11901A08C07D00CA749F /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		C59F11921A08CCFC00CA749F /* portable_endian.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = portable_endian.h; sourceTree = "<group>"; };
 		C5BDC6DB1A07551800E32F7E /* Zigbee Lighting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zigbee Lighting.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5BDC6DF1A07551800E32F7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5BDC6E01A07551800E32F7E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -47,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C59F11911A08C07D00CA749F /* libxml2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,9 +95,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C59F116C1A08BD5D00CA749F /* JIP */ = {
+			isa = PBXGroup;
+			children = (
+				C59F116D1A08BD5D00CA749F /* Client */,
+				C59F11701A08BD5D00CA749F /* Common */,
+				C59F117E1A08BD5D00CA749F /* Include */,
+				C59F11811A08BD5D00CA749F /* Server */,
+			);
+			path = JIP;
+			sourceTree = "<group>";
+		};
+		C59F116D1A08BD5D00CA749F /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				C59F116E1A08BD5D00CA749F /* DiscoverNetwork.c */,
+				C59F116F1A08BD5D00CA749F /* libJIPclient.c */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		C59F11701A08BD5D00CA749F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C59F11711A08BD5D00CA749F /* Cache.c */,
+				C59F11721A08BD5D00CA749F /* Cache.h */,
+				C59F11731A08BD5D00CA749F /* JIP_Packets.h */,
+				C59F11741A08BD5D00CA749F /* JIP_Private.h */,
+				C59F11751A08BD5D00CA749F /* libJIP.c */,
+				C59F11761A08BD5D00CA749F /* Network.c */,
+				C59F11771A08BD5D00CA749F /* Network.h */,
+				C59F11781A08BD5D00CA749F /* Node.c */,
+				C59F11791A08BD5D00CA749F /* Persist.c */,
+				C59F117A1A08BD5D00CA749F /* Tables.c */,
+				C59F117B1A08BD5D00CA749F /* Threads.c */,
+				C59F117C1A08BD5D00CA749F /* Threads.h */,
+				C59F117D1A08BD5D00CA749F /* Trace.h */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		C59F117E1A08BD5D00CA749F /* Include */ = {
+			isa = PBXGroup;
+			children = (
+				C59F117F1A08BD5D00CA749F /* Doxyfile */,
+				C59F11801A08BD5D00CA749F /* JIP.h */,
+				C59F11921A08CCFC00CA749F /* portable_endian.h */,
+			);
+			path = Include;
+			sourceTree = "<group>";
+		};
+		C59F11811A08BD5D00CA749F /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				C59F11821A08BD5D00CA749F /* Groups.c */,
+				C59F11831A08BD5D00CA749F /* libJIPserver.c */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
 		C5BDC6D21A07551800E32F7E = {
 			isa = PBXGroup;
 			children = (
+				C59F11901A08C07D00CA749F /* libxml2.dylib */,
 				C5BDC6DD1A07551800E32F7E /* Zigbee Lighting */,
 				C5BDC6F71A07551800E32F7E /* Zigbee LightingTests */,
 				C5BDC6DC1A07551800E32F7E /* Products */,
@@ -81,6 +176,7 @@
 		C5BDC6DD1A07551800E32F7E /* Zigbee Lighting */ = {
 			isa = PBXGroup;
 			children = (
+				C59F116C1A08BD5D00CA749F /* JIP */,
 				C5BDC6E21A07551800E32F7E /* AppDelegate.h */,
 				C5BDC6E31A07551800E32F7E /* AppDelegate.m */,
 				C5BDC6E51A07551800E32F7E /* ViewController.h */,
@@ -198,6 +294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C59F118D1A08BD5D00CA749F /* Doxyfile in Resources */,
 				C5BDC6EA1A07551800E32F7E /* Main.storyboard in Resources */,
 				C5BDC6EF1A07551800E32F7E /* LaunchScreen.xib in Resources */,
 				C5BDC6EC1A07551800E32F7E /* Images.xcassets in Resources */,
@@ -218,9 +315,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C59F11861A08BD5D00CA749F /* Cache.c in Sources */,
 				C5BDC6E71A07551800E32F7E /* ViewController.m in Sources */,
+				C59F11871A08BD5D00CA749F /* libJIP.c in Sources */,
+				C59F11891A08BD5D00CA749F /* Node.c in Sources */,
+				C59F118A1A08BD5D00CA749F /* Persist.c in Sources */,
 				C5BDC6E41A07551800E32F7E /* AppDelegate.m in Sources */,
+				C59F11881A08BD5D00CA749F /* Network.c in Sources */,
+				C59F118E1A08BD5D00CA749F /* Groups.c in Sources */,
+				C59F11851A08BD5D00CA749F /* libJIPclient.c in Sources */,
 				C5BDC6E11A07551800E32F7E /* main.m in Sources */,
+				C59F118F1A08BD5D00CA749F /* libJIPserver.c in Sources */,
+				C59F118C1A08BD5D00CA749F /* Threads.c in Sources */,
+				C59F11841A08BD5D00CA749F /* DiscoverNetwork.c in Sources */,
+				C59F118B1A08BD5D00CA749F /* Tables.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,7 +449,18 @@
 		C5BDC6FF1A07551800E32F7E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = (
+					"DEBUG=1",
+					"$(inherited)",
+					__APPLE_USE_RFC_2292,
+				);
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"${SDK_ROOT}/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = "Zigbee Lighting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -351,6 +470,7 @@
 		C5BDC7001A07551800E32F7E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Zigbee Lighting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -411,6 +531,7 @@
 				C5BDC7001A07551800E32F7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C5BDC7011A07551800E32F7E /* Build configuration list for PBXNativeTarget "Zigbee LightingTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +540,7 @@
 				C5BDC7031A07551800E32F7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
