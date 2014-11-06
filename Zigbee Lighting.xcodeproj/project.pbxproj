@@ -20,13 +20,17 @@
 		C59F118E1A08BD5D00CA749F /* Groups.c in Sources */ = {isa = PBXBuildFile; fileRef = C59F11821A08BD5D00CA749F /* Groups.c */; };
 		C59F118F1A08BD5D00CA749F /* libJIPserver.c in Sources */ = {isa = PBXBuildFile; fileRef = C59F11831A08BD5D00CA749F /* libJIPserver.c */; };
 		C59F11911A08C07D00CA749F /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C59F11901A08C07D00CA749F /* libxml2.dylib */; };
+		C59F11951A08DF6600CA749F /* LEDListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C59F11941A08DF6600CA749F /* LEDListVC.m */; };
 		C5BDC6E11A07551800E32F7E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BDC6E01A07551800E32F7E /* main.m */; };
 		C5BDC6E41A07551800E32F7E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BDC6E31A07551800E32F7E /* AppDelegate.m */; };
-		C5BDC6E71A07551800E32F7E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BDC6E61A07551800E32F7E /* ViewController.m */; };
 		C5BDC6EA1A07551800E32F7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5BDC6E81A07551800E32F7E /* Main.storyboard */; };
 		C5BDC6EC1A07551800E32F7E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5BDC6EB1A07551800E32F7E /* Images.xcassets */; };
-		C5BDC6EF1A07551800E32F7E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5BDC6ED1A07551800E32F7E /* LaunchScreen.xib */; };
 		C5BDC6FB1A07551800E32F7E /* Zigbee_LightingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BDC6FA1A07551800E32F7E /* Zigbee_LightingTests.m */; };
+		C5C21F151A09B50D00604542 /* JIPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C21F141A09B50D00604542 /* JIPClient.m */; };
+		C5C21F181A0A131200604542 /* JIPNode.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C21F171A0A131200604542 /* JIPNode.m */; };
+		C5C21F1E1A0A394500604542 /* MIBListTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C21F1D1A0A394500604542 /* MIBListTableVC.m */; };
+		C5C21F211A0A397800604542 /* VarTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C21F201A0A397800604542 /* VarTableVC.m */; };
+		C5D446B51A0B21DB00A8A6D0 /* VarDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D446B41A0B21DB00A8A6D0 /* VarDetailVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,19 +65,28 @@
 		C59F11831A08BD5D00CA749F /* libJIPserver.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = libJIPserver.c; sourceTree = "<group>"; };
 		C59F11901A08C07D00CA749F /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		C59F11921A08CCFC00CA749F /* portable_endian.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = portable_endian.h; sourceTree = "<group>"; };
+		C59F11931A08DF6600CA749F /* LEDListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LEDListVC.h; sourceTree = "<group>"; };
+		C59F11941A08DF6600CA749F /* LEDListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LEDListVC.m; sourceTree = "<group>"; };
 		C5BDC6DB1A07551800E32F7E /* Zigbee Lighting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zigbee Lighting.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5BDC6DF1A07551800E32F7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5BDC6E01A07551800E32F7E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C5BDC6E21A07551800E32F7E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C5BDC6E31A07551800E32F7E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C5BDC6E51A07551800E32F7E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C5BDC6E61A07551800E32F7E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C5BDC6E91A07551800E32F7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C5BDC6EB1A07551800E32F7E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		C5BDC6EE1A07551800E32F7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C5BDC6F41A07551800E32F7E /* Zigbee LightingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Zigbee LightingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5BDC6F91A07551800E32F7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5BDC6FA1A07551800E32F7E /* Zigbee_LightingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Zigbee_LightingTests.m; sourceTree = "<group>"; };
+		C5C21F131A09B50D00604542 /* JIPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JIPClient.h; sourceTree = "<group>"; };
+		C5C21F141A09B50D00604542 /* JIPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JIPClient.m; sourceTree = "<group>"; };
+		C5C21F161A0A131200604542 /* JIPNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JIPNode.h; sourceTree = "<group>"; };
+		C5C21F171A0A131200604542 /* JIPNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JIPNode.m; sourceTree = "<group>"; };
+		C5C21F1C1A0A394500604542 /* MIBListTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIBListTableVC.h; sourceTree = "<group>"; };
+		C5C21F1D1A0A394500604542 /* MIBListTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIBListTableVC.m; sourceTree = "<group>"; };
+		C5C21F1F1A0A397800604542 /* VarTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VarTableVC.h; sourceTree = "<group>"; };
+		C5C21F201A0A397800604542 /* VarTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VarTableVC.m; sourceTree = "<group>"; };
+		C5D446B31A0B21DB00A8A6D0 /* VarDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VarDetailVC.h; sourceTree = "<group>"; };
+		C5D446B41A0B21DB00A8A6D0 /* VarDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VarDetailVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,11 +192,20 @@
 				C59F116C1A08BD5D00CA749F /* JIP */,
 				C5BDC6E21A07551800E32F7E /* AppDelegate.h */,
 				C5BDC6E31A07551800E32F7E /* AppDelegate.m */,
-				C5BDC6E51A07551800E32F7E /* ViewController.h */,
-				C5BDC6E61A07551800E32F7E /* ViewController.m */,
+				C5C21F1C1A0A394500604542 /* MIBListTableVC.h */,
+				C5C21F1D1A0A394500604542 /* MIBListTableVC.m */,
+				C5C21F1F1A0A397800604542 /* VarTableVC.h */,
+				C5C21F201A0A397800604542 /* VarTableVC.m */,
+				C5C21F131A09B50D00604542 /* JIPClient.h */,
+				C5C21F141A09B50D00604542 /* JIPClient.m */,
+				C5C21F161A0A131200604542 /* JIPNode.h */,
+				C5C21F171A0A131200604542 /* JIPNode.m */,
 				C5BDC6E81A07551800E32F7E /* Main.storyboard */,
+				C5D446B31A0B21DB00A8A6D0 /* VarDetailVC.h */,
+				C5D446B41A0B21DB00A8A6D0 /* VarDetailVC.m */,
+				C59F11931A08DF6600CA749F /* LEDListVC.h */,
+				C59F11941A08DF6600CA749F /* LEDListVC.m */,
 				C5BDC6EB1A07551800E32F7E /* Images.xcassets */,
-				C5BDC6ED1A07551800E32F7E /* LaunchScreen.xib */,
 				C5BDC6DE1A07551800E32F7E /* Supporting Files */,
 			);
 			path = "Zigbee Lighting";
@@ -263,6 +285,7 @@
 				TargetAttributes = {
 					C5BDC6DA1A07551800E32F7E = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = QLQELZN7GW;
 					};
 					C5BDC6F31A07551800E32F7E = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -296,7 +319,6 @@
 			files = (
 				C59F118D1A08BD5D00CA749F /* Doxyfile in Resources */,
 				C5BDC6EA1A07551800E32F7E /* Main.storyboard in Resources */,
-				C5BDC6EF1A07551800E32F7E /* LaunchScreen.xib in Resources */,
 				C5BDC6EC1A07551800E32F7E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,12 +337,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5C21F1E1A0A394500604542 /* MIBListTableVC.m in Sources */,
 				C59F11861A08BD5D00CA749F /* Cache.c in Sources */,
-				C5BDC6E71A07551800E32F7E /* ViewController.m in Sources */,
+				C5D446B51A0B21DB00A8A6D0 /* VarDetailVC.m in Sources */,
 				C59F11871A08BD5D00CA749F /* libJIP.c in Sources */,
 				C59F11891A08BD5D00CA749F /* Node.c in Sources */,
 				C59F118A1A08BD5D00CA749F /* Persist.c in Sources */,
 				C5BDC6E41A07551800E32F7E /* AppDelegate.m in Sources */,
+				C5C21F151A09B50D00604542 /* JIPClient.m in Sources */,
 				C59F11881A08BD5D00CA749F /* Network.c in Sources */,
 				C59F118E1A08BD5D00CA749F /* Groups.c in Sources */,
 				C59F11851A08BD5D00CA749F /* libJIPclient.c in Sources */,
@@ -328,6 +352,9 @@
 				C59F118F1A08BD5D00CA749F /* libJIPserver.c in Sources */,
 				C59F118C1A08BD5D00CA749F /* Threads.c in Sources */,
 				C59F11841A08BD5D00CA749F /* DiscoverNetwork.c in Sources */,
+				C5C21F181A0A131200604542 /* JIPNode.m in Sources */,
+				C5C21F211A0A397800604542 /* VarTableVC.m in Sources */,
+				C59F11951A08DF6600CA749F /* LEDListVC.m in Sources */,
 				C59F118B1A08BD5D00CA749F /* Tables.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,14 +384,6 @@
 				C5BDC6E91A07551800E32F7E /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C5BDC6ED1A07551800E32F7E /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C5BDC6EE1A07551800E32F7E /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -451,6 +470,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -462,6 +483,7 @@
 					"${SDK_ROOT}/usr/include/libxml2",
 				);
 				INFOPLIST_FILE = "Zigbee Lighting/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -472,7 +494,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Zigbee Lighting/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

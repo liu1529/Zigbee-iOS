@@ -1,0 +1,48 @@
+//
+//  JIPClient.h
+//  Zigbee Lighting
+//
+//  Created by lxl on 14-11-5.
+//
+//
+
+#import <Foundation/Foundation.h>
+#import "JIP.h"
+#import "JIPNode.h"
+
+@class JIPClient;
+@protocol JIPClientDelegate <NSObject>
+
+- (void) JIPClientDidConnect:(JIPClient *)client;
+- (void) JIPClientDidFailToConnect:(JIPClient *)client;
+
+- (void) JIPClientDidDiscover:(JIPClient *)client;
+- (void) JIPClientDidFailToDiscover:(JIPClient *)client;
+
+@optional
+- (void) JIPClient:(JIPClient *)client nodeDidJoin:(JIPNode *)node;
+- (void) JIPClient:(JIPClient *)client nodeDidLeave:(JIPNode *)node;
+- (void) JIPClient:(JIPClient *)client nodeDidMove:(JIPNode *)node;
+
+@end
+
+@interface JIPClient : NSObject
+
+
+- (instancetype)initWithDelegate:(id<JIPClientDelegate>)delegate;
+
+- (void) connectIPV4:(const char *)pcIPv4Address
+                IPV6:(const char *)pcIPv6Address
+                port:(const int)port
+              useTCP:(bool_t) useTCP;
+- (void) connectIPV6:(const char *) pcIPv6Address
+                port:(const int)port;
+- (void) connectIPV4:(const char *)pcIPv4Address
+              useTCP:(bool_t)useTCP;
+- (void) connectIPV6:(const char *) pcIPv6Address;
+- (void) discover;
+
+@property (nonatomic, strong) id<JIPClientDelegate> delegate;
+@property (nonatomic, strong, readonly) NSArray *nodes;
+
+@end
