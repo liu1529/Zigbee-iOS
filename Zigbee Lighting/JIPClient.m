@@ -23,6 +23,17 @@
 
 @implementation JIPClient
 
++ (instancetype) sharedJIPClient
+{
+    static dispatch_once_t  onceToken;
+    static JIPClient * sSharedInstance;
+    dispatch_once(&onceToken, ^{
+        sSharedInstance = [[JIPClient alloc] init];
+    });
+    
+    return sSharedInstance;
+}
+
 - (instancetype)init
 {
     self = [super init];
@@ -35,6 +46,7 @@
     }
     return self;
 }
+
 
 - (instancetype)initWithDelegate:(id<JIPClientDelegate>)delegate
 {
@@ -96,7 +108,7 @@
     [self connectIPV6:pcIPv6Address port:JIP_DEFAULT_PORT];
 }
 
-- (void) discover
+- (void) discoverWithDeviceIDs:(NSArray *)deviceIDs completion:(void (^)(void))completion
 {
     if (eJIPService_DiscoverNetwork(&_sJIP_Context) != E_JIP_OK)
     {
@@ -104,46 +116,76 @@
         if ([self.delegate respondsToSelector:@selector(JIPClientDidFailToDiscover:)]) {
             [self.delegate JIPClientDidFailToDiscover:self];
         }
-        return;
+        
     }
-    
-    uint32_t u32NumAddresses;
-    tsJIPAddress *psAddresses;
+    if (deviceIDs == nil) {
+        uint32_t u32NumAddresses;
+        tsJIPAddress *psAddresses;
         
-    if (eJIP_GetNodeAddressList(&_sJIP_Context, JIP_DEVICEID_ALL, &psAddresses, &u32NumAddresses) == E_JIP_OK)
-    {
-        
-        
-        [self.nodesArray removeAllObjects];
-        for (int nodeIndex = 0 ; nodeIndex < u32NumAddresses; nodeIndex++) {
-            tsNode *psNode = psJIP_LookupNode(&_sJIP_Context, &psAddresses[nodeIndex]);
-            if (!psNode)
-            {
-                fprintf(stderr, "Node has been removed\n");
-                continue;
+        if (eJIP_GetNodeAddressList(&_sJIP_Context, JIP_DEVICEID_ALL, &psAddresses, &u32NumAddresses) == E_JIP_OK)
+        {
+            for (int nodeIndex = 0 ; nodeIndex < u32NumAddresses; nodeIndex++) {
+                tsNode *psNode = psJIP_LookupNode(&_sJIP_Context, &psAddresses[nodeIndex]);
+                if (!psNode)
+                {
+                    fprintf(stderr, "Node has been removed\n");
+                    continue;
+                }
+                if ([self.delegate respondsToSelector:@selector(JIPClient:didDiscoverNode:)]) {
+                    [self.delegate JIPClient:self didDiscoverNode:[[JIPNode alloc] initWithTsNode:psNode]];
+                }
+                eJIP_UnlockNode(psNode);
+                
             }
-            [self.nodesArray addObject:[[JIPNode alloc] initWithTsNode:psNode]];
-            
+            free(psAddresses);
+
         }
-        if ([self.delegate respondsToSelector:@selector(JIPClientDidDiscover:)]) {
-            [self.delegate JIPClientDidDiscover:self];
+        else
+        {
+            printf("Error getting node list\n\r");
+            if ([self.delegate respondsToSelector:@selector(JIPClientDidFailToDiscover:)]) {
+                [self.delegate JIPClientDidFailToDiscover:self];
+            }
         }
-        
-        for (int nodeIndex = 0 ; nodeIndex < u32NumAddresses; nodeIndex++) {
-            tsNode *psNode = psJIP_LookupNode(&_sJIP_Context, &psAddresses[nodeIndex]);
-            eJIP_UnlockNode(psNode);
-        }
-        
-        free(psAddresses);
-        
     } else {
-        if ([self.delegate respondsToSelector:@selector(JIPClientDidFailToDiscover:)]) {
-            [self.delegate JIPClientDidFailToDiscover:self];
+        for (NSNumber *idNum in deviceIDs) {
+            uint32_t u32NumAddresses;
+            tsJIPAddress *psAddresses;
+            uint32_t deviceID = [idNum unsignedIntValue];
+            if (eJIP_GetNodeAddressList(&_sJIP_Context, deviceID, &psAddresses, &u32NumAddresses) == E_JIP_OK)
+            {
+                tsNode *psNode = psJIP_LookupNode(&_sJIP_Context, &psAddresses[0]);
+                if (!psNode)
+                {
+                    fprintf(stderr, "Node has been removed\n");
+                    continue;
+                }
+                if ([self.delegate respondsToSelector:@selector(JIPClient:didDiscoverNode:)]) {
+                    [self.delegate JIPClient:self didDiscoverNode:[[JIPNode alloc] initWithTsNode:psNode]];
+                }
+                eJIP_UnlockNode(psNode);
+                free(psAddresses);
+            }
+            else
+            {
+                printf("Error getting node list\n\r");
+                if ([self.delegate respondsToSelector:@selector(JIPClientDidFailToDiscover:)]) {
+                    [self.delegate JIPClientDidFailToDiscover:self];
+                }
+                break;
+            }
+
         }
-        printf("Error getting node list\n\r");
+    }
+    if (completion) {
+        completion();
     }
     
 }
+
+
+
+
 
 void networkChange(teJIP_NetworkChangeEvent eEvent, struct _tsNode *psNode)
 {

@@ -34,15 +34,22 @@ typedef enum {
 @property (nonatomic, readonly) uint32_t ID;
 @property (nonatomic, strong, readonly) NSArray *vars;
 
+- (JIPVar *) lookupVarWithName:(NSString *)name;
+- (JIPVar *) lookupVarWithIndex:(uint8_t) VarIndex;
+
+
 @end
 
 @interface JIPNode : NSObject
 
 @property (nonatomic, readonly) tsNode *node;
 @property (nonatomic, readonly) uint32_t deviceID;
+@property (nonatomic, readonly) NSString *name;
 @property (nonatomic, strong, readonly) NSString *address;
 @property (nonatomic, strong, readonly) NSArray *MIBs;
 
 - (instancetype)initWithTsNode:(tsNode *)node;
+- (JIPMIB *) lookupMibWithName:(NSString *)name;
+- (JIPMIB *) lookupMibWithID:(uint32_t) MibId;
 
 @end

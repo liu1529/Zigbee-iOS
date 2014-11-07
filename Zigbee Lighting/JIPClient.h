@@ -16,7 +16,7 @@
 - (void) JIPClientDidConnect:(JIPClient *)client;
 - (void) JIPClientDidFailToConnect:(JIPClient *)client;
 
-- (void) JIPClientDidDiscover:(JIPClient *)client;
+- (void) JIPClient:(JIPClient *)client didDiscoverNode:(JIPNode *)node;
 - (void) JIPClientDidFailToDiscover:(JIPClient *)client;
 
 @optional
@@ -28,6 +28,7 @@
 
 @interface JIPClient : NSObject
 
++ (instancetype) sharedJIPClient;
 
 - (instancetype)initWithDelegate:(id<JIPClientDelegate>)delegate;
 
@@ -40,7 +41,8 @@
 - (void) connectIPV4:(const char *)pcIPv4Address
               useTCP:(bool_t)useTCP;
 - (void) connectIPV6:(const char *) pcIPv6Address;
-- (void) discover;
+
+- (void) discoverWithDeviceIDs:(NSArray *)deviceIDs completion:(void (^)(void))completion;
 
 @property (nonatomic, strong) id<JIPClientDelegate> delegate;
 @property (nonatomic, strong, readonly) NSArray *nodes;

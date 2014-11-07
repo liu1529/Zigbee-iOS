@@ -71,7 +71,6 @@
 @property (nonatomic) tsMib *mib;
 @property (nonatomic) NSString *name;
 @property (nonatomic) uint32_t ID;
-@property (nonatomic, strong) NSMutableArray *varArray;
 
 @end
 
@@ -85,19 +84,48 @@
         self.name = [NSString stringWithUTF8String:mib->pcName];
         self.ID = mib->u32MibId;
         
-        self.varArray = [NSMutableArray new];
-        tsVar *psVar = mib->psVars;
-        while (psVar) {
-            [self.varArray insertObject:[[JIPVar alloc] initWithVar:psVar] atIndex:psVar->u8Index];
-            psVar = psVar->psNext;
-        }
     }
     return self;
 }
 
 - (NSArray *)vars
 {
-    return self.varArray;
+    static NSMutableArray *varArray = nil;
+    if (varArray == nil) {
+        tsVar *psVar = self.mib->psVars;
+        while (psVar) {
+            [varArray insertObject:[[JIPVar alloc] initWithVar:psVar] atIndex:psVar->u8Index];
+            psVar = psVar->psNext;
+        }
+
+    }
+    return varArray;
+}
+
+- (JIPVar *) lookupVarWithName:(NSString *)name
+{
+    eJIP_LockNode(self.mib->psOwnerNode, YES);
+    tsVar *tsVar = psJIP_LookupVar(self.mib, NULL, name.UTF8String);
+    if (tsVar == NULL) {
+        eJIP_UnlockNode(self.mib->psOwnerNode);
+        return nil;
+    }
+    JIPVar *var = [[JIPVar alloc] initWithVar:tsVar];
+    eJIP_UnlockNode(self.mib->psOwnerNode);
+    return var;
+}
+
+- (JIPVar *) lookupVarWithIndex:(uint8_t) VarIndex
+{
+    eJIP_LockNode(self.mib->psOwnerNode, YES);
+    tsVar *tsVar = psJIP_LookupVarIndex(self.mib, VarIndex);
+    if (tsVar == NULL) {
+        eJIP_UnlockNode(self.mib->psOwnerNode);
+        return nil;
+    }
+    JIPVar *var = [[JIPVar alloc] initWithVar:tsVar];
+    eJIP_UnlockNode(self.mib->psOwnerNode);
+    return var;
 }
 
 @end
@@ -109,7 +137,6 @@
 @property (nonatomic) tsNode *node;
 @property (nonatomic) uint32_t deviceID;
 @property (nonatomic, strong) NSString *address;
-@property (nonatomic, strong) NSMutableArray *MIBArray;
 
 @end
 
@@ -124,20 +151,60 @@
         char s[128];
         inet_ntop(PF_INET6, &node->sNode_Address.sin6_addr, s, sizeof(s));
         self.address = [NSString stringWithUTF8String:s];
-        
-        self.MIBArray = [NSMutableArray new];
-        tsMib *psMib = node->psMibs;
-        while (psMib) {
-            [self.MIBArray insertObject:[[JIPMIB alloc] initWithMib:psMib] atIndex:psMib->u8Index];
-            psMib = psMib->psNext;
-        }
     }
     return self;
 }
 
 - (NSArray *)MIBs
 {
-    return self.MIBArray;
+    static NSMutableArray *MIBArray = nil;
+    if (MIBArray == nil) {
+        MIBArray = [NSMutableArray new];
+        tsMib *psMib = self.node->psMibs;
+        while (psMib) {
+            [MIBArray insertObject:[[JIPMIB alloc] initWithMib:psMib] atIndex:psMib->u8Index];
+            psMib = psMib->psNext;
+        }
+    }
+    return MIBArray;
+}
+
+- (NSString *)name
+{
+    JIPMIB *mib = [self lookupMibWithName:@"Node"];
+    if (mib) {
+        JIPVar *var = [mib lookupVarWithName:@"DescriptiveName"];
+        if (var) {
+            return [NSString stringWithUTF8String:var.data.bytes];
+        }
+    }
+    return self.address;
+}
+
+- (JIPMIB *) lookupMibWithName:(NSString *)name
+{
+    eJIP_LockNode(self.node, YES);
+    tsMib *tsmib = psJIP_LookupMib(self.node, NULL, name.UTF8String);
+    if (tsmib == NULL) {
+        eJIP_UnlockNode(self.node);
+        return nil;
+    }
+    JIPMIB *mib = [[JIPMIB alloc] initWithMib:tsmib];
+    eJIP_UnlockNode(self.node);
+    return mib;
+}
+
+- (JIPMIB *) lookupMibWithID:(uint32_t) MibId
+{
+    eJIP_LockNode(self.node, YES);
+    tsMib *tsmib = psJIP_LookupMibId(self.node, NULL, MibId);
+    if (tsmib == NULL) {
+        eJIP_UnlockNode(self.node);
+        return nil;
+    }
+    JIPMIB *mib = [[JIPMIB alloc] initWithMib:tsmib];
+    eJIP_UnlockNode(self.node);
+    return mib;
 }
 
 @end

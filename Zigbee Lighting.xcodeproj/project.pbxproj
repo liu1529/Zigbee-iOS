@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C511D4C61A0C53FA00194D58 /* LED.m in Sources */ = {isa = PBXBuildFile; fileRef = C511D4C51A0C53FA00194D58 /* LED.m */; };
+		C527F34E1A0B55B300BAD639 /* LEDListCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C527F34D1A0B55B300BAD639 /* LEDListCollectionVC.m */; };
+		C527F3511A0B55E100BAD639 /* LEDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C527F3501A0B55E100BAD639 /* LEDCollectionViewCell.m */; };
+		C527F3541A0B79CD00BAD639 /* LEDEditVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C527F3531A0B79CD00BAD639 /* LEDEditVC.m */; };
 		C59F11841A08BD5D00CA749F /* DiscoverNetwork.c in Sources */ = {isa = PBXBuildFile; fileRef = C59F116E1A08BD5D00CA749F /* DiscoverNetwork.c */; };
 		C59F11851A08BD5D00CA749F /* libJIPclient.c in Sources */ = {isa = PBXBuildFile; fileRef = C59F116F1A08BD5D00CA749F /* libJIPclient.c */; };
 		C59F11861A08BD5D00CA749F /* Cache.c in Sources */ = {isa = PBXBuildFile; fileRef = C59F11711A08BD5D00CA749F /* Cache.c */; };
@@ -20,7 +24,6 @@
 		C59F118E1A08BD5D00CA749F /* Groups.c in Sources */ = {isa = PBXBuildFile; fileRef = C59F11821A08BD5D00CA749F /* Groups.c */; };
 		C59F118F1A08BD5D00CA749F /* libJIPserver.c in Sources */ = {isa = PBXBuildFile; fileRef = C59F11831A08BD5D00CA749F /* libJIPserver.c */; };
 		C59F11911A08C07D00CA749F /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C59F11901A08C07D00CA749F /* libxml2.dylib */; };
-		C59F11951A08DF6600CA749F /* LEDListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C59F11941A08DF6600CA749F /* LEDListVC.m */; };
 		C5BDC6E11A07551800E32F7E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BDC6E01A07551800E32F7E /* main.m */; };
 		C5BDC6E41A07551800E32F7E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BDC6E31A07551800E32F7E /* AppDelegate.m */; };
 		C5BDC6EA1A07551800E32F7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5BDC6E81A07551800E32F7E /* Main.storyboard */; };
@@ -28,9 +31,6 @@
 		C5BDC6FB1A07551800E32F7E /* Zigbee_LightingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BDC6FA1A07551800E32F7E /* Zigbee_LightingTests.m */; };
 		C5C21F151A09B50D00604542 /* JIPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C21F141A09B50D00604542 /* JIPClient.m */; };
 		C5C21F181A0A131200604542 /* JIPNode.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C21F171A0A131200604542 /* JIPNode.m */; };
-		C5C21F1E1A0A394500604542 /* MIBListTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C21F1D1A0A394500604542 /* MIBListTableVC.m */; };
-		C5C21F211A0A397800604542 /* VarTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C21F201A0A397800604542 /* VarTableVC.m */; };
-		C5D446B51A0B21DB00A8A6D0 /* VarDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D446B41A0B21DB00A8A6D0 /* VarDetailVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +44,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C511D4C41A0C53FA00194D58 /* LED.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LED.h; sourceTree = "<group>"; };
+		C511D4C51A0C53FA00194D58 /* LED.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LED.m; sourceTree = "<group>"; };
+		C527F34C1A0B55B300BAD639 /* LEDListCollectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LEDListCollectionVC.h; sourceTree = "<group>"; };
+		C527F34D1A0B55B300BAD639 /* LEDListCollectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LEDListCollectionVC.m; sourceTree = "<group>"; };
+		C527F34F1A0B55E100BAD639 /* LEDCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LEDCollectionViewCell.h; sourceTree = "<group>"; };
+		C527F3501A0B55E100BAD639 /* LEDCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LEDCollectionViewCell.m; sourceTree = "<group>"; };
+		C527F3521A0B79CD00BAD639 /* LEDEditVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LEDEditVC.h; sourceTree = "<group>"; };
+		C527F3531A0B79CD00BAD639 /* LEDEditVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LEDEditVC.m; sourceTree = "<group>"; };
 		C59F116E1A08BD5D00CA749F /* DiscoverNetwork.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = DiscoverNetwork.c; sourceTree = "<group>"; };
 		C59F116F1A08BD5D00CA749F /* libJIPclient.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = libJIPclient.c; sourceTree = "<group>"; };
 		C59F11711A08BD5D00CA749F /* Cache.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Cache.c; sourceTree = "<group>"; };
@@ -65,8 +73,6 @@
 		C59F11831A08BD5D00CA749F /* libJIPserver.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = libJIPserver.c; sourceTree = "<group>"; };
 		C59F11901A08C07D00CA749F /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		C59F11921A08CCFC00CA749F /* portable_endian.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = portable_endian.h; sourceTree = "<group>"; };
-		C59F11931A08DF6600CA749F /* LEDListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LEDListVC.h; sourceTree = "<group>"; };
-		C59F11941A08DF6600CA749F /* LEDListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LEDListVC.m; sourceTree = "<group>"; };
 		C5BDC6DB1A07551800E32F7E /* Zigbee Lighting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zigbee Lighting.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5BDC6DF1A07551800E32F7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5BDC6E01A07551800E32F7E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -77,16 +83,10 @@
 		C5BDC6F41A07551800E32F7E /* Zigbee LightingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Zigbee LightingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5BDC6F91A07551800E32F7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5BDC6FA1A07551800E32F7E /* Zigbee_LightingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Zigbee_LightingTests.m; sourceTree = "<group>"; };
-		C5C21F131A09B50D00604542 /* JIPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JIPClient.h; sourceTree = "<group>"; };
-		C5C21F141A09B50D00604542 /* JIPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JIPClient.m; sourceTree = "<group>"; };
-		C5C21F161A0A131200604542 /* JIPNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JIPNode.h; sourceTree = "<group>"; };
-		C5C21F171A0A131200604542 /* JIPNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JIPNode.m; sourceTree = "<group>"; };
-		C5C21F1C1A0A394500604542 /* MIBListTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIBListTableVC.h; sourceTree = "<group>"; };
-		C5C21F1D1A0A394500604542 /* MIBListTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIBListTableVC.m; sourceTree = "<group>"; };
-		C5C21F1F1A0A397800604542 /* VarTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VarTableVC.h; sourceTree = "<group>"; };
-		C5C21F201A0A397800604542 /* VarTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VarTableVC.m; sourceTree = "<group>"; };
-		C5D446B31A0B21DB00A8A6D0 /* VarDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VarDetailVC.h; sourceTree = "<group>"; };
-		C5D446B41A0B21DB00A8A6D0 /* VarDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VarDetailVC.m; sourceTree = "<group>"; };
+		C5C21F131A09B50D00604542 /* JIPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JIPClient.h; path = "Zigbee Lighting/JIPClient.h"; sourceTree = SOURCE_ROOT; };
+		C5C21F141A09B50D00604542 /* JIPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JIPClient.m; path = "Zigbee Lighting/JIPClient.m"; sourceTree = SOURCE_ROOT; };
+		C5C21F161A0A131200604542 /* JIPNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JIPNode.h; path = "Zigbee Lighting/JIPNode.h"; sourceTree = SOURCE_ROOT; };
+		C5C21F171A0A131200604542 /* JIPNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JIPNode.m; path = "Zigbee Lighting/JIPNode.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +111,10 @@
 		C59F116C1A08BD5D00CA749F /* JIP */ = {
 			isa = PBXGroup;
 			children = (
+				C5C21F131A09B50D00604542 /* JIPClient.h */,
+				C5C21F141A09B50D00604542 /* JIPClient.m */,
+				C5C21F161A0A131200604542 /* JIPNode.h */,
+				C5C21F171A0A131200604542 /* JIPNode.m */,
 				C59F116D1A08BD5D00CA749F /* Client */,
 				C59F11701A08BD5D00CA749F /* Common */,
 				C59F117E1A08BD5D00CA749F /* Include */,
@@ -192,19 +196,15 @@
 				C59F116C1A08BD5D00CA749F /* JIP */,
 				C5BDC6E21A07551800E32F7E /* AppDelegate.h */,
 				C5BDC6E31A07551800E32F7E /* AppDelegate.m */,
-				C5C21F1C1A0A394500604542 /* MIBListTableVC.h */,
-				C5C21F1D1A0A394500604542 /* MIBListTableVC.m */,
-				C5C21F1F1A0A397800604542 /* VarTableVC.h */,
-				C5C21F201A0A397800604542 /* VarTableVC.m */,
-				C5C21F131A09B50D00604542 /* JIPClient.h */,
-				C5C21F141A09B50D00604542 /* JIPClient.m */,
-				C5C21F161A0A131200604542 /* JIPNode.h */,
-				C5C21F171A0A131200604542 /* JIPNode.m */,
+				C527F34C1A0B55B300BAD639 /* LEDListCollectionVC.h */,
+				C527F34D1A0B55B300BAD639 /* LEDListCollectionVC.m */,
+				C527F3521A0B79CD00BAD639 /* LEDEditVC.h */,
+				C527F3531A0B79CD00BAD639 /* LEDEditVC.m */,
 				C5BDC6E81A07551800E32F7E /* Main.storyboard */,
-				C5D446B31A0B21DB00A8A6D0 /* VarDetailVC.h */,
-				C5D446B41A0B21DB00A8A6D0 /* VarDetailVC.m */,
-				C59F11931A08DF6600CA749F /* LEDListVC.h */,
-				C59F11941A08DF6600CA749F /* LEDListVC.m */,
+				C511D4C41A0C53FA00194D58 /* LED.h */,
+				C511D4C51A0C53FA00194D58 /* LED.m */,
+				C527F34F1A0B55E100BAD639 /* LEDCollectionViewCell.h */,
+				C527F3501A0B55E100BAD639 /* LEDCollectionViewCell.m */,
 				C5BDC6EB1A07551800E32F7E /* Images.xcassets */,
 				C5BDC6DE1A07551800E32F7E /* Supporting Files */,
 			);
@@ -337,24 +337,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5C21F1E1A0A394500604542 /* MIBListTableVC.m in Sources */,
 				C59F11861A08BD5D00CA749F /* Cache.c in Sources */,
-				C5D446B51A0B21DB00A8A6D0 /* VarDetailVC.m in Sources */,
 				C59F11871A08BD5D00CA749F /* libJIP.c in Sources */,
 				C59F11891A08BD5D00CA749F /* Node.c in Sources */,
 				C59F118A1A08BD5D00CA749F /* Persist.c in Sources */,
 				C5BDC6E41A07551800E32F7E /* AppDelegate.m in Sources */,
 				C5C21F151A09B50D00604542 /* JIPClient.m in Sources */,
+				C527F34E1A0B55B300BAD639 /* LEDListCollectionVC.m in Sources */,
 				C59F11881A08BD5D00CA749F /* Network.c in Sources */,
 				C59F118E1A08BD5D00CA749F /* Groups.c in Sources */,
 				C59F11851A08BD5D00CA749F /* libJIPclient.c in Sources */,
+				C527F3541A0B79CD00BAD639 /* LEDEditVC.m in Sources */,
 				C5BDC6E11A07551800E32F7E /* main.m in Sources */,
 				C59F118F1A08BD5D00CA749F /* libJIPserver.c in Sources */,
 				C59F118C1A08BD5D00CA749F /* Threads.c in Sources */,
 				C59F11841A08BD5D00CA749F /* DiscoverNetwork.c in Sources */,
+				C527F3511A0B55E100BAD639 /* LEDCollectionViewCell.m in Sources */,
 				C5C21F181A0A131200604542 /* JIPNode.m in Sources */,
-				C5C21F211A0A397800604542 /* VarTableVC.m in Sources */,
-				C59F11951A08DF6600CA749F /* LEDListVC.m in Sources */,
+				C511D4C61A0C53FA00194D58 /* LED.m in Sources */,
 				C59F118B1A08BD5D00CA749F /* Tables.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
