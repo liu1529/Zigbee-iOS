@@ -19,10 +19,14 @@
 - (void) JIPClient:(JIPClient *)client didDiscoverNode:(JIPNode *)node;
 - (void) JIPClientDidFailToDiscover:(JIPClient *)client;
 
+- (void) JIPClient:(JIPClient *)client didFoundGetwayWithIPV4:(NSString *)ipv4 withIPV6:(NSString *)ipv6;
+
 @optional
 - (void) JIPClient:(JIPClient *)client nodeDidJoin:(JIPNode *)node;
 - (void) JIPClient:(JIPClient *)client nodeDidLeave:(JIPNode *)node;
 - (void) JIPClient:(JIPClient *)client nodeDidMove:(JIPNode *)node;
+
+
 
 @end
 
@@ -31,6 +35,8 @@
 + (instancetype) sharedJIPClient;
 
 - (instancetype)initWithDelegate:(id<JIPClientDelegate>)delegate;
+
+- (void) findGetway;
 
 - (void) connectIPV4:(const char *)pcIPv4Address
                 IPV6:(const char *)pcIPv6Address

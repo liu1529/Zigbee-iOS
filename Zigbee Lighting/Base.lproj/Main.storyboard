@@ -33,7 +33,7 @@
                                             <rect key="frame" x="25" y="8" width="100" height="100"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12z-kM-cTz">
-                                            <rect key="frame" x="8" y="108" width="134" height="34"/>
+                                            <rect key="frame" x="8" y="108" width="134" height="42"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -95,19 +95,37 @@
                                     <action selector="lumChange:" destination="h4p-sX-YMm" eventType="valueChanged" id="ayF-g5-dGA"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsE-kx-wER">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="255" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsE-kx-wER">
                                 <rect key="frame" x="14" y="345" width="579" height="31"/>
                                 <connections>
                                     <action selector="tempChange:" destination="h4p-sX-YMm" eventType="valueChanged" id="PjA-7F-bYx"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="255" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Si-yw-fFO">
+                                <rect key="frame" x="14" y="433" width="572" height="31"/>
+                                <connections>
+                                    <action selector="satChange:" destination="h4p-sX-YMm" eventType="valueChanged" id="dag-wR-98z"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="5000" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okG-24-Wrr">
+                                <rect key="frame" x="14" y="395" width="572" height="31"/>
+                                <color key="minimumTrackTintColor" red="0.98594826459884644" green="0.0" blue="0.026950567960739136" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="maximumTrackTintColor" red="0.98594671487808228" green="0.0" blue="0.039444990456104279" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="hueChange:" destination="h4p-sX-YMm" eventType="valueChanged" id="eyS-zw-wXw"/>
                                 </connections>
                             </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="PcN-mI-SPX" firstAttribute="top" secondItem="3TK-D7-iHf" secondAttribute="bottom" constant="26" id="0Rx-hG-vA5"/>
+                            <constraint firstItem="3Si-yw-fFO" firstAttribute="trailing" secondItem="okG-24-Wrr" secondAttribute="trailing" id="1W6-08-N2Q"/>
+                            <constraint firstItem="okG-24-Wrr" firstAttribute="trailing" secondItem="hBT-Ho-tXT" secondAttribute="trailingMargin" id="9C2-BG-tdj"/>
                             <constraint firstItem="r3X-d4-5P3" firstAttribute="leading" secondItem="PcN-mI-SPX" secondAttribute="trailing" constant="8" id="IrP-eb-o0C"/>
                             <constraint firstItem="r3X-d4-5P3" firstAttribute="top" secondItem="s5n-iS-sFh" secondAttribute="bottom" constant="31" id="Iw4-pv-nhj"/>
+                            <constraint firstItem="3Si-yw-fFO" firstAttribute="top" secondItem="okG-24-Wrr" secondAttribute="bottom" constant="8" symbolic="YES" id="KIi-pG-ydW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="s5n-iS-sFh" secondAttribute="trailing" id="N8E-IW-15B"/>
+                            <constraint firstItem="3Si-yw-fFO" firstAttribute="leading" secondItem="okG-24-Wrr" secondAttribute="leading" id="NdP-Ap-aSb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="r3X-d4-5P3" secondAttribute="trailing" constant="-7" id="R70-iz-sum"/>
                             <constraint firstItem="s5n-iS-sFh" firstAttribute="leading" secondItem="PcN-mI-SPX" secondAttribute="trailing" constant="8" id="S0e-eb-A0P"/>
                             <constraint firstItem="ZC1-Ch-s84" firstAttribute="leading" secondItem="hBT-Ho-tXT" secondAttribute="leadingMargin" id="Tfs-57-L3R"/>
@@ -116,6 +134,8 @@
                             <constraint firstItem="PcN-mI-SPX" firstAttribute="leading" secondItem="hBT-Ho-tXT" secondAttribute="leadingMargin" id="geI-EJ-Oww"/>
                             <constraint firstItem="ZC1-Ch-s84" firstAttribute="top" secondItem="PcN-mI-SPX" secondAttribute="bottom" constant="35" id="lTw-ug-S8w"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZC1-Ch-s84" secondAttribute="trailing" constant="-7" id="ngf-y8-EtA"/>
+                            <constraint firstItem="okG-24-Wrr" firstAttribute="top" secondItem="lsE-kx-wER" secondAttribute="bottom" constant="20" id="qX3-Eb-Awb"/>
+                            <constraint firstItem="okG-24-Wrr" firstAttribute="leading" secondItem="hBT-Ho-tXT" secondAttribute="leadingMargin" id="vgK-Tw-Uew"/>
                             <constraint firstItem="lsE-kx-wER" firstAttribute="leading" secondItem="hBT-Ho-tXT" secondAttribute="leadingMargin" id="wy8-Pd-wfu"/>
                             <constraint firstItem="s5n-iS-sFh" firstAttribute="top" secondItem="3TK-D7-iHf" secondAttribute="bottom" constant="76" id="yjg-Re-PgP"/>
                         </constraints>

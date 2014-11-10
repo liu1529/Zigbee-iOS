@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UISlider *tempSlider;
 - (IBAction)lumChange:(UISlider *)sender;
 - (IBAction)tempChange:(UISlider *)sender;
+- (IBAction)hueChange:(UISlider *)sender;
+- (IBAction)satChange:(UISlider *)sender;
 
 @end
 
@@ -31,6 +33,9 @@
     self.imageView.image = self.editLed.image;
     
     [self.lumSlider setValue:self.editLed.lum animated:YES];
+    [self.tempSlider setValue:self.editLed.cct animated:YES];
+    
+    
     
 }
 
@@ -54,5 +59,14 @@
 }
 
 - (IBAction)tempChange:(UISlider *)sender {
+    self.editLed.cct = sender.value;
+}
+
+- (IBAction)hueChange:(UISlider *)sender {
+    self.editLed.hue = sender.value;
+}
+
+- (IBAction)satChange:(UISlider *)sender {
+    self.editLed.saturation = sender.value;
 }
 @end

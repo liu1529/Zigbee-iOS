@@ -12,11 +12,18 @@
 
 @interface LED : NSObject
 
+@property (nonatomic, strong, readonly) JIPNode *node;
+
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) UIImage *image;
+
 @property (nonatomic) uint8_t lum;
 @property (nonatomic) uint8_t cct;
 
+@property (nonatomic) uint16_t hue;
+@property (nonatomic) uint8_t saturation;
+
 + (instancetype) LEDWithJIPNode:(JIPNode *)node;
+
 
 @end

@@ -12,8 +12,11 @@
 
 @property (nonatomic, strong) JIPNode *node;
 @property (nonatomic, strong) JIPMIB *bulbControlMib;
+@property (nonatomic, strong) JIPMIB *bulbColour;
 
 @end
+
+
 
 @implementation LED
 
@@ -29,11 +32,16 @@
 
 + (instancetype) LEDWithJIPNode:(JIPNode *)node
 {
-    LED *led =[LED new];
-    led.node = node;
-    led.bulbControlMib = [node lookupMibWithName:@"BulbControl"];
-    
-    return led;
+    if ([node lookupMibWithName:@"BulbControl"])
+    {
+        LED *led =[LED new];
+        led.node = node;
+        led.bulbControlMib = [node lookupMibWithName:@"BulbControl"];
+        led.bulbColour = [node lookupMibWithName:@"BulbColour"];
+        
+        return led;
+    }
+    return nil;
 }
 
 - (NSString *)name
@@ -43,9 +51,9 @@
 
 - (uint8_t)lum
 {
-    static JIPVar *lumCurrentVar = nil;
-    if (!lumCurrentVar) {
-        lumCurrentVar = [self.bulbControlMib lookupVarWithName:@"LumCurrent"];
+    JIPVar *lumCurrentVar = [self.bulbControlMib lookupVarWithName:@"LumCurrent"];
+    if (!lumCurrentVar.data) {
+        return 0;
     }
     uint8_t lumCurrent = *(uint8_t *)(lumCurrentVar.data.bytes);
     return lumCurrent;
@@ -54,11 +62,41 @@
 
 - (void)setLum:(uint8_t)lum
 {
-    static JIPVar *lumTargetVar = nil;
-    if (!lumTargetVar) {
-        lumTargetVar = [self.bulbControlMib lookupVarWithName:@"LumTarget"];
-    }
+    JIPVar *lumTargetVar = [self.bulbControlMib lookupVarWithName:@"LumTarget"];
     [lumTargetVar writeData:[NSData dataWithBytes:&lum length:1]];
 }
+
+- (uint8_t)cct
+{
+    JIPVar *cctCurrentVar = [self.bulbColour lookupVarWithName:@"ColourTempCurrent"];
+    if (!cctCurrentVar.data) {
+        return 0;
+    }
+    uint8_t lumCurrent = *(uint8_t *)(cctCurrentVar.data.bytes);
+    return lumCurrent;
+}
+
+- (void)setCct:(uint8_t)cct
+{
+    JIPVar *cctTargetVar = [self.bulbColour lookupVarWithName:@"ColourTempTarget"];
+    [cctTargetVar writeData:[NSData dataWithBytes:&cct length:1]];
+    
+}
+
+- (void)setHue:(uint16_t)hue
+{
+    JIPVar *hueTargetVar = [self.bulbColour lookupVarWithName:@"HueTarget"];
+    [hueTargetVar writeData:[NSData dataWithBytes:&hue length:sizeof(hue)]];
+    
+}
+
+- (void)setSaturation:(uint8_t)saturation
+{
+    JIPVar *satTargetVar = [self.bulbColour lookupVarWithName:@"SatTarget"];
+    [satTargetVar writeData:[NSData dataWithBytes:&saturation length:sizeof(saturation)]];
+    
+}
+
+
 
 @end

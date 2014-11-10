@@ -11,12 +11,15 @@
 #import "JIPClient.h"
 #import "LEDEditVC.h"
 #import "LED.h"
+#import "IndicatorView.h"
+
 
 @interface LEDListCollectionVC () <JIPClientDelegate>
 
 @property (nonatomic, strong) JIPClient *client;
 @property (nonatomic, strong) NSMutableArray *LEDs;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (nonatomic, strong) IndicatorView *indicatorView;
 
 @end
 
@@ -35,11 +38,14 @@ static NSString * const reuseIdentifier = @"Cell";
     
     // Do any additional setup after loading the view.
     
-    self.LEDs = [NSMutableArray new];
-    
     self.client = [JIPClient sharedJIPClient];
     self.client.delegate = self;
-    [self.client connectIPV4:"192.168.1.1" IPV6:"::0" port:1872 useTCP:YES];
+
+    
+    [self findGetWay];
+    
+    self.LEDs = [NSMutableArray new];
+    
     
     //refresh
     self.refreshControl = [[UIRefreshControl alloc] init];
@@ -54,27 +60,111 @@ static NSString * const reuseIdentifier = @"Cell";
     // Dispose of any resources that can be recreated.
 }
 
+- (void)findGetWay
+{
+    
+    self.indicatorView = [[[NSBundle mainBundle] loadNibNamed:@"IndicatorView" owner:nil options:nil] lastObject];
+    self.indicatorView.label.text = @"Finding Getway...";
+    [self.view insertSubview:self.indicatorView aboveSubview:self.collectionView];
+
+    [self.client findGetway];
+}
+
+- (void)JIPClient:(JIPClient *)client didFoundGetwayWithIPV4:(NSString *)ipv4 withIPV6:(NSString *)ipv6
+{
+    self.indicatorView.label.text = @"Connecting...";
+    if (ipv4)
+    {
+        [self.client connectIPV4:ipv4.UTF8String IPV6:"::0" port:1872 useTCP:YES];
+    }
+    else if (ipv6)
+    {
+        [self.client connectIPV6:ipv6.UTF8String port:1872];
+    }
+}
+
+#pragma mark - JIPClientDelegate
+
 - (void)JIPClientDidConnect:(JIPClient *)client
 {
+    self.indicatorView.label.text = @"Discovering...";
     [client discoverWithDeviceIDs:nil completion:nil];
 }
 
 - (void)JIPClientDidFailToConnect:(JIPClient *)client
 {
+    if (self.indicatorView) {
+        [self.indicatorView removeFromSuperview];
+        self.indicatorView = nil;
+        
+    }
+   
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connect Error"
+                                                    message:@"Connent Getway Failed"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles: nil];
+    [alert show];
     
 }
 
 - (void)JIPClient:(JIPClient *)client didDiscoverNode:(JIPNode *)node
 {
-    if ([node lookupMibWithName:@"BulbControl"]) {
-        LED *led = [LED LEDWithJIPNode:node];
+    if (self.indicatorView) {
+         self.indicatorView.hidden = YES;
+        [self.indicatorView removeFromSuperview];
+        self.indicatorView = nil;
+        [self.view setNeedsDisplay];
+    }
+    
+    LED *led = [LED LEDWithJIPNode:node];
+    if (led) {
         [self.LEDs addObject:led];
         [self.collectionView reloadData];
     }
     
 }
 
+- (void)JIPClientDidFailToDiscover:(JIPClient *)client
+{
+    if (self.indicatorView) {
+        [self.indicatorView removeFromSuperview];
+        self.indicatorView = nil;
+    }
+    [self.refreshControl endRefreshing];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Discover Error"
+                                                    message:@"Discover Failed"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles: nil];
+    [alert show];
+}
 
+- (void)JIPClient:(JIPClient *)client nodeDidJoin:(JIPNode *)node
+{
+    LED *led = [LED LEDWithJIPNode:node];
+    if (led) {
+        [self.LEDs addObject:led];
+        [self.collectionView reloadData];
+    }
+
+}
+
+- (void)JIPClient:(JIPClient *)client nodeDidLeave:(JIPNode *)node
+{
+
+}
+
+- (void)JIPClient:(JIPClient *)client nodeDidMove:(JIPNode *)node
+{
+    for (LED *led in self.LEDs) {
+        if (led.node == node) {
+            [self.LEDs removeObject:led];
+            [self.collectionView reloadData];
+            break;
+        }
+    }
+}
 
 - (void) refreshList
 {
@@ -113,6 +203,11 @@ static NSString * const reuseIdentifier = @"Cell";
     LED *led = self.LEDs[indexPath.row];
     
     cell.imageView.image = led.image;
+    cell.imageView.alpha = 0;
+    [UIView animateWithDuration:1 animations:^{
+        cell.imageView.alpha = 1;
+    }];
+    
     cell.label.text = led.name;
     
     return cell;

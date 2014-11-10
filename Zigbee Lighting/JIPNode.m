@@ -71,6 +71,7 @@
 @property (nonatomic) tsMib *mib;
 @property (nonatomic) NSString *name;
 @property (nonatomic) uint32_t ID;
+@property (nonatomic, strong) NSMutableArray *varArray;
 
 @end
 
@@ -90,16 +91,16 @@
 
 - (NSArray *)vars
 {
-    static NSMutableArray *varArray = nil;
-    if (varArray == nil) {
+    
+    if (self.varArray == nil) {
         tsVar *psVar = self.mib->psVars;
         while (psVar) {
-            [varArray insertObject:[[JIPVar alloc] initWithVar:psVar] atIndex:psVar->u8Index];
+            [self.varArray insertObject:[[JIPVar alloc] initWithVar:psVar] atIndex:psVar->u8Index];
             psVar = psVar->psNext;
         }
 
     }
-    return varArray;
+    return self.varArray;
 }
 
 - (JIPVar *) lookupVarWithName:(NSString *)name
@@ -137,6 +138,7 @@
 @property (nonatomic) tsNode *node;
 @property (nonatomic) uint32_t deviceID;
 @property (nonatomic, strong) NSString *address;
+@property (nonatomic, strong) NSMutableArray *MIBArray;
 
 @end
 
@@ -157,16 +159,15 @@
 
 - (NSArray *)MIBs
 {
-    static NSMutableArray *MIBArray = nil;
-    if (MIBArray == nil) {
-        MIBArray = [NSMutableArray new];
+    if (self.MIBArray == nil) {
+        self.MIBArray = [NSMutableArray new];
         tsMib *psMib = self.node->psMibs;
         while (psMib) {
-            [MIBArray insertObject:[[JIPMIB alloc] initWithMib:psMib] atIndex:psMib->u8Index];
+            [self.MIBArray insertObject:[[JIPMIB alloc] initWithMib:psMib] atIndex:psMib->u8Index];
             psMib = psMib->psNext;
         }
     }
-    return MIBArray;
+    return self.MIBArray;
 }
 
 - (NSString *)name

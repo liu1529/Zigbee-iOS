@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="IndicatorView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fdc-L9-5EN">
+                    <rect key="frame" x="225" y="250" width="150" height="100"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="rRZ-GE-D3a">
+                            <rect key="frame" x="57" y="17" width="37" height="37"/>
+                        </activityIndicatorView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWK-c8-IPZ">
+                            <rect key="frame" x="0.0" y="62" width="150" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="DWK-c8-IPZ" secondAttribute="trailing" id="8hE-TY-H1z"/>
+                        <constraint firstItem="DWK-c8-IPZ" firstAttribute="top" secondItem="rRZ-GE-D3a" secondAttribute="bottom" constant="8" symbolic="YES" id="JPj-fr-PBh"/>
+                        <constraint firstItem="DWK-c8-IPZ" firstAttribute="centerX" secondItem="rRZ-GE-D3a" secondAttribute="centerX" id="XDx-4J-J1V"/>
+                        <constraint firstItem="rRZ-GE-D3a" firstAttribute="leading" secondItem="Fdc-L9-5EN" secondAttribute="leading" constant="57" id="biC-fX-aHw"/>
+                        <constraint firstAttribute="bottom" secondItem="DWK-c8-IPZ" secondAttribute="bottom" constant="17" id="d1S-F6-BLE"/>
+                        <constraint firstItem="DWK-c8-IPZ" firstAttribute="leading" secondItem="Fdc-L9-5EN" secondAttribute="leading" id="gQO-3u-8WS"/>
+                        <constraint firstItem="rRZ-GE-D3a" firstAttribute="top" secondItem="Fdc-L9-5EN" secondAttribute="top" constant="17" id="ohc-uO-FGp"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Fdc-L9-5EN" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Kpn-gA-ITz"/>
+                <constraint firstItem="Fdc-L9-5EN" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="iez-mh-Mty"/>
+            </constraints>
+            <connections>
+                <outlet property="label" destination="DWK-c8-IPZ" id="E2C-VE-Xkl"/>
+            </connections>
+        </view>
+    </objects>
+</document>

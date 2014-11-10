@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C511D4C61A0C53FA00194D58 /* LED.m in Sources */ = {isa = PBXBuildFile; fileRef = C511D4C51A0C53FA00194D58 /* LED.m */; };
+		C511D4CF1A0C96B900194D58 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = C511D4CC1A0C96B900194D58 /* GCDAsyncSocket.m */; };
+		C511D4D01A0C96B900194D58 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = C511D4CE1A0C96B900194D58 /* GCDAsyncUdpSocket.m */; };
 		C527F34E1A0B55B300BAD639 /* LEDListCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C527F34D1A0B55B300BAD639 /* LEDListCollectionVC.m */; };
 		C527F3511A0B55E100BAD639 /* LEDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C527F3501A0B55E100BAD639 /* LEDCollectionViewCell.m */; };
 		C527F3541A0B79CD00BAD639 /* LEDEditVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C527F3531A0B79CD00BAD639 /* LEDEditVC.m */; };
@@ -31,6 +33,8 @@
 		C5BDC6FB1A07551800E32F7E /* Zigbee_LightingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BDC6FA1A07551800E32F7E /* Zigbee_LightingTests.m */; };
 		C5C21F151A09B50D00604542 /* JIPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C21F141A09B50D00604542 /* JIPClient.m */; };
 		C5C21F181A0A131200604542 /* JIPNode.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C21F171A0A131200604542 /* JIPNode.m */; };
+		C5FB5F281A108C7E0027CA84 /* IndicatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5FB5F271A108C7E0027CA84 /* IndicatorView.xib */; };
+		C5FB5F2B1A108D860027CA84 /* IndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FB5F2A1A108D860027CA84 /* IndicatorView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +50,10 @@
 /* Begin PBXFileReference section */
 		C511D4C41A0C53FA00194D58 /* LED.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LED.h; sourceTree = "<group>"; };
 		C511D4C51A0C53FA00194D58 /* LED.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LED.m; sourceTree = "<group>"; };
+		C511D4CB1A0C96B900194D58 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		C511D4CC1A0C96B900194D58 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		C511D4CD1A0C96B900194D58 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		C511D4CE1A0C96B900194D58 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		C527F34C1A0B55B300BAD639 /* LEDListCollectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LEDListCollectionVC.h; sourceTree = "<group>"; };
 		C527F34D1A0B55B300BAD639 /* LEDListCollectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LEDListCollectionVC.m; sourceTree = "<group>"; };
 		C527F34F1A0B55E100BAD639 /* LEDCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LEDCollectionViewCell.h; sourceTree = "<group>"; };
@@ -87,6 +95,9 @@
 		C5C21F141A09B50D00604542 /* JIPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JIPClient.m; path = "Zigbee Lighting/JIPClient.m"; sourceTree = SOURCE_ROOT; };
 		C5C21F161A0A131200604542 /* JIPNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JIPNode.h; path = "Zigbee Lighting/JIPNode.h"; sourceTree = SOURCE_ROOT; };
 		C5C21F171A0A131200604542 /* JIPNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JIPNode.m; path = "Zigbee Lighting/JIPNode.m"; sourceTree = SOURCE_ROOT; };
+		C5FB5F271A108C7E0027CA84 /* IndicatorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IndicatorView.xib; path = ../IndicatorView.xib; sourceTree = "<group>"; };
+		C5FB5F291A108D860027CA84 /* IndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndicatorView.h; sourceTree = "<group>"; };
+		C5FB5F2A1A108D860027CA84 /* IndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndicatorView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +119,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C511D4CA1A0C968100194D58 /* AsyncSock */ = {
+			isa = PBXGroup;
+			children = (
+				C511D4CB1A0C96B900194D58 /* GCDAsyncSocket.h */,
+				C511D4CC1A0C96B900194D58 /* GCDAsyncSocket.m */,
+				C511D4CD1A0C96B900194D58 /* GCDAsyncUdpSocket.h */,
+				C511D4CE1A0C96B900194D58 /* GCDAsyncUdpSocket.m */,
+			);
+			name = AsyncSock;
+			sourceTree = "<group>";
+		};
 		C59F116C1A08BD5D00CA749F /* JIP */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +215,7 @@
 		C5BDC6DD1A07551800E32F7E /* Zigbee Lighting */ = {
 			isa = PBXGroup;
 			children = (
+				C511D4CA1A0C968100194D58 /* AsyncSock */,
 				C59F116C1A08BD5D00CA749F /* JIP */,
 				C5BDC6E21A07551800E32F7E /* AppDelegate.h */,
 				C5BDC6E31A07551800E32F7E /* AppDelegate.m */,
@@ -201,6 +224,9 @@
 				C527F3521A0B79CD00BAD639 /* LEDEditVC.h */,
 				C527F3531A0B79CD00BAD639 /* LEDEditVC.m */,
 				C5BDC6E81A07551800E32F7E /* Main.storyboard */,
+				C5FB5F271A108C7E0027CA84 /* IndicatorView.xib */,
+				C5FB5F291A108D860027CA84 /* IndicatorView.h */,
+				C5FB5F2A1A108D860027CA84 /* IndicatorView.m */,
 				C511D4C41A0C53FA00194D58 /* LED.h */,
 				C511D4C51A0C53FA00194D58 /* LED.m */,
 				C527F34F1A0B55E100BAD639 /* LEDCollectionViewCell.h */,
@@ -319,6 +345,7 @@
 			files = (
 				C59F118D1A08BD5D00CA749F /* Doxyfile in Resources */,
 				C5BDC6EA1A07551800E32F7E /* Main.storyboard in Resources */,
+				C5FB5F281A108C7E0027CA84 /* IndicatorView.xib in Resources */,
 				C5BDC6EC1A07551800E32F7E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +366,7 @@
 			files = (
 				C59F11861A08BD5D00CA749F /* Cache.c in Sources */,
 				C59F11871A08BD5D00CA749F /* libJIP.c in Sources */,
+				C5FB5F2B1A108D860027CA84 /* IndicatorView.m in Sources */,
 				C59F11891A08BD5D00CA749F /* Node.c in Sources */,
 				C59F118A1A08BD5D00CA749F /* Persist.c in Sources */,
 				C5BDC6E41A07551800E32F7E /* AppDelegate.m in Sources */,
@@ -349,6 +377,8 @@
 				C59F11851A08BD5D00CA749F /* libJIPclient.c in Sources */,
 				C527F3541A0B79CD00BAD639 /* LEDEditVC.m in Sources */,
 				C5BDC6E11A07551800E32F7E /* main.m in Sources */,
+				C511D4D01A0C96B900194D58 /* GCDAsyncUdpSocket.m in Sources */,
+				C511D4CF1A0C96B900194D58 /* GCDAsyncSocket.m in Sources */,
 				C59F118F1A08BD5D00CA749F /* libJIPserver.c in Sources */,
 				C59F118C1A08BD5D00CA749F /* Threads.c in Sources */,
 				C59F11841A08BD5D00CA749F /* DiscoverNetwork.c in Sources */,

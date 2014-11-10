@@ -7,6 +7,9 @@
 //
 
 #import "JIPClient.h"
+#import "GCDAsyncUdpSocket.h"
+#include <netinet/in.h>
+#import <arpa/inet.h>
 
 
 
@@ -23,10 +26,12 @@
 
 @implementation JIPClient
 
+static JIPClient * sSharedInstance;
+
 + (instancetype) sharedJIPClient
 {
     static dispatch_once_t  onceToken;
-    static JIPClient * sSharedInstance;
+    
     dispatch_once(&onceToken, ^{
         sSharedInstance = [[JIPClient alloc] init];
     });
@@ -191,11 +196,22 @@ void networkChange(teJIP_NetworkChangeEvent eEvent, struct _tsNode *psNode)
 {
     switch (eEvent) {
         case E_JIP_NODE_JOIN:
-           
+            if ([sSharedInstance.delegate respondsToSelector:@selector(JIPClient:nodeDidJoin:)]) {
+                [sSharedInstance.delegate JIPClient:sSharedInstance
+                                        nodeDidJoin:[[JIPNode alloc] initWithTsNode:psNode]];
+            }
             break;
         case E_JIP_NODE_LEAVE:
+            if ([sSharedInstance.delegate respondsToSelector:@selector(JIPClient:nodeDidLeave:)]) {
+                [sSharedInstance.delegate JIPClient:sSharedInstance
+                                        nodeDidLeave:[[JIPNode alloc] initWithTsNode:psNode]];
+            }
             break;
         case E_JIP_NODE_MOVE:
+            if ([sSharedInstance.delegate respondsToSelector:@selector(JIPClient:nodeDidMove:)]) {
+                [sSharedInstance.delegate JIPClient:sSharedInstance
+                                        nodeDidMove:[[JIPNode alloc] initWithTsNode:psNode]];
+            }
             break;
         default:
             break;
@@ -215,6 +231,61 @@ void networkChange(teJIP_NetworkChangeEvent eEvent, struct _tsNode *psNode)
 }
 
 
+- (void) findGetway
+{
+    GCDAsyncUdpSocket *sock = [[GCDAsyncUdpSocket alloc] initWithDelegate:self
+                                                            delegateQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
+    NSError *err;
+    if (![sock enableBroadcast:YES error:&err]) {
+        NSLog(@"err enableBroadcast %@",err);
+        return;
+    }
+    if (![sock bindToPort:0 error:&err]) {
+        NSLog(@"err bindToPort:0 %@",err);
+        return;
+    }
+    if (![sock beginReceiving:&err]) {
+        NSLog(@"err beginReceiving %@",err);
+        return;
+    }
+    
+    
+    
+    uint8_t bytes[24] = {0};
+    bytes[0] = 1;
+    bytes[2] = 21;
+    bytes[20] = 16;
+    bytes[21] = 1;
+    
+    
+    
+    [sock sendData:[NSData dataWithBytes:bytes length:sizeof(bytes)]
+            toHost:@"255.255.255.255"
+              port:1872
+       withTimeout:-1
+               tag:1];
+}
+
+- (void)udpSocket:(GCDAsyncUdpSocket *)sock didReceiveData:(NSData *)data fromAddress:(NSData *)address withFilterContext:(id)filterContext
+{
+ //   NSLog(@"sock:%@ didReceiveData:%@ fromAddress:%@", sock, data, [GCDAsyncUdpSocket hostFromAddress:address]);
+    if (data.length >= 19) {
+        NSData *ipv6Data = [data subdataWithRange:NSMakeRange(3, sizeof(struct in6_addr))];
+        
+        char addrBuf[INET6_ADDRSTRLEN];
+        
+        if (inet_ntop(AF_INET6, ipv6Data.bytes, addrBuf, (socklen_t)sizeof(addrBuf)) != NULL)
+        {
+          
+            if ([self.delegate respondsToSelector:@selector(JIPClient:didFoundGetwayWithIPV4:withIPV6:)]) {
+                [self.delegate JIPClient:self
+                  didFoundGetwayWithIPV4:[GCDAsyncUdpSocket hostFromAddress:address]
+                                withIPV6:[NSString stringWithCString:addrBuf encoding:NSASCIIStringEncoding]];
+            }
+        }
+    
+    }
+}
 
 
 @end
