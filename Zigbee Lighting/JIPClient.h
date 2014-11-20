@@ -48,6 +48,8 @@
               useTCP:(bool_t)useTCP;
 - (void) connectIPV6:(const char *) pcIPv6Address;
 
+- (void) startMonitorNetwork;
+
 - (void) discoverWithDeviceIDs:(NSArray *)deviceIDs completion:(void (^)(void))completion;
 
 @property (nonatomic, strong) id<JIPClientDelegate> delegate;

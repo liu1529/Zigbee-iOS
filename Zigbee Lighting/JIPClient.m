@@ -218,7 +218,7 @@ void networkChange(teJIP_NetworkChangeEvent eEvent, struct _tsNode *psNode)
     }
 }
 
-- (void) monitorNetwork
+- (void) startMonitorNetwork
 {
     
     eJIPService_MonitorNetwork(&_sJIP_Context, networkChange);

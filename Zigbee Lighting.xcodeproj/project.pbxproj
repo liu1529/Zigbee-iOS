@@ -33,6 +33,7 @@
 		C5BDC6FB1A07551800E32F7E /* Zigbee_LightingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BDC6FA1A07551800E32F7E /* Zigbee_LightingTests.m */; };
 		C5C21F151A09B50D00604542 /* JIPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C21F141A09B50D00604542 /* JIPClient.m */; };
 		C5C21F181A0A131200604542 /* JIPNode.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C21F171A0A131200604542 /* JIPNode.m */; };
+		C5C494FF1A119A8D0022DD1D /* UIImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C494FE1A119A8D0022DD1D /* UIImageEffects.m */; };
 		C5FB5F281A108C7E0027CA84 /* IndicatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5FB5F271A108C7E0027CA84 /* IndicatorView.xib */; };
 		C5FB5F2B1A108D860027CA84 /* IndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FB5F2A1A108D860027CA84 /* IndicatorView.m */; };
 /* End PBXBuildFile section */
@@ -95,6 +96,8 @@
 		C5C21F141A09B50D00604542 /* JIPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JIPClient.m; path = "Zigbee Lighting/JIPClient.m"; sourceTree = SOURCE_ROOT; };
 		C5C21F161A0A131200604542 /* JIPNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JIPNode.h; path = "Zigbee Lighting/JIPNode.h"; sourceTree = SOURCE_ROOT; };
 		C5C21F171A0A131200604542 /* JIPNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JIPNode.m; path = "Zigbee Lighting/JIPNode.m"; sourceTree = SOURCE_ROOT; };
+		C5C494FD1A119A8D0022DD1D /* UIImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageEffects.h; sourceTree = "<group>"; };
+		C5C494FE1A119A8D0022DD1D /* UIImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageEffects.m; sourceTree = "<group>"; };
 		C5FB5F271A108C7E0027CA84 /* IndicatorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IndicatorView.xib; path = ../IndicatorView.xib; sourceTree = "<group>"; };
 		C5FB5F291A108D860027CA84 /* IndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndicatorView.h; sourceTree = "<group>"; };
 		C5FB5F2A1A108D860027CA84 /* IndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndicatorView.m; sourceTree = "<group>"; };
@@ -231,6 +234,8 @@
 				C511D4C51A0C53FA00194D58 /* LED.m */,
 				C527F34F1A0B55E100BAD639 /* LEDCollectionViewCell.h */,
 				C527F3501A0B55E100BAD639 /* LEDCollectionViewCell.m */,
+				C5C494FD1A119A8D0022DD1D /* UIImageEffects.h */,
+				C5C494FE1A119A8D0022DD1D /* UIImageEffects.m */,
 				C5BDC6EB1A07551800E32F7E /* Images.xcassets */,
 				C5BDC6DE1A07551800E32F7E /* Supporting Files */,
 			);
@@ -374,6 +379,7 @@
 				C527F34E1A0B55B300BAD639 /* LEDListCollectionVC.m in Sources */,
 				C59F11881A08BD5D00CA749F /* Network.c in Sources */,
 				C59F118E1A08BD5D00CA749F /* Groups.c in Sources */,
+				C5C494FF1A119A8D0022DD1D /* UIImageEffects.m in Sources */,
 				C59F11851A08BD5D00CA749F /* libJIPclient.c in Sources */,
 				C527F3541A0B79CD00BAD639 /* LEDEditVC.m in Sources */,
 				C5BDC6E11A07551800E32F7E /* main.m in Sources */,

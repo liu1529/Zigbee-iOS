@@ -11,6 +11,8 @@
 
 @interface LEDEditVC : UIViewController
 
+
+@property (nonatomic, strong) UIImage *bgImage;
 @property (nonatomic, strong) LED *editLed;
 
 @end

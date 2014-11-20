@@ -11,6 +11,7 @@
 @interface LEDEditVC ()
 
 
+@property (nonatomic, weak) IBOutlet UIImageView *bgImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @property (weak, nonatomic) IBOutlet UITextField *nameTextFiled;
@@ -32,10 +33,19 @@
     self.nameTextFiled.text = self.editLed.name;
     self.imageView.image = self.editLed.image;
     
+    self.bgImageView.image = self.bgImage;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     [self.lumSlider setValue:self.editLed.lum animated:YES];
     [self.tempSlider setValue:self.editLed.cct animated:YES];
-    
-    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     
 }
 

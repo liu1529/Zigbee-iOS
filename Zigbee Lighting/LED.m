@@ -69,7 +69,7 @@
 - (uint8_t)cct
 {
     JIPVar *cctCurrentVar = [self.bulbColour lookupVarWithName:@"ColourTempCurrent"];
-    if (!cctCurrentVar.data) {
+    if (!cctCurrentVar.enable || !cctCurrentVar.data) {
         return 0;
     }
     uint8_t lumCurrent = *(uint8_t *)(cctCurrentVar.data.bytes);
